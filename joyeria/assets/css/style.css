@@ -189,6 +189,7 @@ button:focus-visible,
   gap:1rem;
   justify-content:center;
   flex-wrap:wrap;
+  margin-bottom:3rem;
 }
 
 .hero-scroll{
@@ -198,6 +199,14 @@ button:focus-visible,
   width:1px; height:44px;
   background:rgba(199,162,76,0.35);
   overflow:hidden;
+}
+
+/* En móvil no hay suficiente alto para el hero + la línea de scroll
+   sin que se encime con los botones, y el gesto de scroll ya es obvio
+   al tacto, así que la ocultamos por completo. */
+@media (max-width: 767px){
+  .hero-scroll{ display:none; }
+  .hero{ padding-bottom:3rem; }
 }
 .hero-scroll span{
   position:absolute;
@@ -248,6 +257,12 @@ button:focus-visible,
    Catalog
    ========================================================== */
 .catalog{ padding:7rem 0 6rem; }
+
+.catalog-status{
+  color:var(--ink-dim);
+  font-size:0.95rem;
+  padding:2rem 0;
+}
 
 .filter-row{
   display:flex;
